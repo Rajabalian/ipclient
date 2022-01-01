@@ -1,0 +1,9 @@
+displayName: ipclient
+type: middleware
+
+import: github.com/rajabalian/ipclient
+
+summary: "Get User Ip"
+
+testData:
+  foo: bar
