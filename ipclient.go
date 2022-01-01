@@ -26,9 +26,11 @@ func New(ctx context.Context, next http.Handler, config *Config, name string) (h
 }
 
 func (u *UIDdemo) ServeHTTP(res http.ResponseWriter, req *http.Request) {
-	ip := req.Header.Get("X-Forwarded-For")
-
-	req.Header.Set("X-User-Ip", ip)
+	
+	forwarded := req.Header.Get("X-FORWARDED-FOR")
+	
+	req.Header.Set("X-User-Ip", forwarded)
+	req.Header.Set("X-RemoteAddr",req.RemoteAddr)
 
 	u.next.ServeHTTP(res, req)
 }
