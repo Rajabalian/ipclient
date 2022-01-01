@@ -1,7 +1,7 @@
 displayName: ipclient
 type: middleware
 
-import: github.com/rajabalian/ipclient
+import: github.com/Rajabalian/ipclient
 
 summary: "Get User Ip"
 
